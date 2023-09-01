@@ -67,20 +67,29 @@
   <div class="video-modal" id="videoContainer">
     <button id="cerrarVideo" class="button" style="position: absolute; top: 10px; right: 10px;">Cerrar</button>
     <iframe class="video-iframe" width="640" height="360" src="https://www.youtube.com/embed/pTCMh0u_9S4?rel=0" frameborder="0" allowfullscreen></iframe>
+    <button id="retrocederVideo" class="button" style="position: absolute; bottom: 10px; left: 10px;">Retroceder</button>
   </div>
 
-  <!-- JavaScript para mostrar/ocultar el modal de video -->
+  <!-- JavaScript para mostrar/ocultar el modal de video y el botón de retroceso -->
   <script>
     const mostrarVideoButton = document.getElementById("mostrarVideo");
     const cerrarVideoButton = document.getElementById("cerrarVideo");
+    const retrocederVideoButton = document.getElementById("retrocederVideo");
     const videoContainer = document.getElementById("videoContainer");
 
     mostrarVideoButton.addEventListener("click", function() {
       videoContainer.style.display = "block";
+      retrocederVideoButton.style.display = "block";
     });
 
     cerrarVideoButton.addEventListener("click", function() {
       videoContainer.style.display = "none";
+      retrocederVideoButton.style.display = "none";
+    });
+
+    retrocederVideoButton.addEventListener("click", function() {
+      // Puedes agregar aquí la lógica para retroceder en el video si es posible.
+      // Por ejemplo, pausar el video o volver al principio.
     });
   </script>
 </body>
